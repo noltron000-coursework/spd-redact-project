@@ -9,7 +9,13 @@ class RedactTest(unittest.TestCase):
 		redacted = ['goodbye','yes']
 		modified = ['hello','world','planet']
 		prog_modified = redact_words(sentance, redacted)
-		assert modified == prog_modified
+		assert prog_modified == modified
+
+	def no_redacted(self):
+		sentance = ['this','wont','change']
+		redacted = []
+		prog_modified = redact_words(sentance, redacted)
+		assert prog_modified == []
 
 if __name__ == '__main__':
 	print('yea')

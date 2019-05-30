@@ -8,8 +8,15 @@ def redact_words(original, redacted):
 	'''
 	modified = []
 	for word in original:
+		found = False
+
 		for bad_word in redacted:
 			if word != bad_word:
-				modified.append(word)
+				found = True
+				break
+
+		if found:
+			modified.append(word)
+
 	print(modified)
 	return modified
